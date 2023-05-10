@@ -14,7 +14,7 @@ let computer = new Computer(canvas);
 
 function drawScore() {
   context.fillStyle = "white";
-  context.font = "100px 'Cute Font'";
+  context.font = "100px Impact";
   context.textAlign = "left";
   context.textBaseline = "top";
   let playerScoreText = ball.playerScore;
