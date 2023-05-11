@@ -1,3 +1,6 @@
+let hit = new Audio('./hit.wav');
+let score = new Audio('./score.mp3');
+
 class Ball {
   constructor(canvas) {
     this.canvas = canvas;
@@ -27,8 +30,10 @@ class Ball {
     }
     if (this.x + this.size > player.x + 10) {
       this.reset();
+      score.play();
       this.playerScore++;
     } else if (this.x + 10 < computer.x + computer.width) {
+      score.play();
       this.reset();
       this.computerScore++;
     }
@@ -38,6 +43,7 @@ class Ball {
       this.y <= player.y + player.height
     ) {
       // Collision avec le joueur
+      hit.play();
       let playerCenter = player.y + player.height / 2;
       let ballCenter = this.y + this.size / 2;
       let deltaY = ballCenter - playerCenter;
@@ -48,6 +54,7 @@ class Ball {
       this.y + this.size >= computer.y &&
       this.y <= computer.y + computer.height
     ) {
+      hit.play();
       // Collision avec l'ordinateur
       let computerCenter = computer.y + computer.height / 2;
       let ballCenter = this.y + this.size / 2;
