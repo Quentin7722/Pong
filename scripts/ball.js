@@ -10,7 +10,7 @@ class Ball {
     this.directionX = 1;
     this.directionY = 1;
     this.size = 10;
-    this.speed = 3;
+    this.speed = 4;
     this.playerScore = 0;
     this.computerScore = 0;
   }
